@@ -1,93 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>First block like</title>
-</head>
-<body>
+<html> 
+<head>  
+<title>SAS4
+</title>
+<link rel="icon" 
+  type="image/png" 
+  href="./images/sas4.png">
+<style> 
+body {
+background-image: url('https://opengameart.org/sites/default/files/background-1_0.png');
+background-size: cover;
+}
+</style>
 
-<script src="https://cdn.jsdelivr.net/npm/blocklike@1.0.0/dist/blocklike-1.0.0.min.js"></script>
-<script>
-    let stage = new blockLike.Stage();
-    let sprite = new blockLike.Sprite();
-    let costume = new blockLike.Costume({
-        width: 20,
-        height: 20,
-        color: '#A2DAFF',
-        image: 'https://www.blocklike.org/images/sheep_step.png'
-    });
-    sprite.addTo(stage);
-    let cat = new blockLike.Sprite({
-    width: 100,
-    height: 100,
-    color: 'transparent',
-    image: 'http://clipart-library.com/images_k/cats-silhouette-vector/cats-silhouette-vector-2.png'
-});
-let stretchCostume = new blockLike.Costume({
-    width: 100,
-    height: 100,
-    color: 'transparent',
-    image: 'https://www.vhv.rs/dpng/d/440-4405944_cat-vector-png-cat-stretching-silhouette-transparent-png.png'
-})
 
-cat.addTo(stage);
-cat.setRotationStyle('left-right');
-cat.pointInDirection(-90);
-
-cat.whenFlag(function () {
-    this.say("Hi");
-})
-cat.whenClicked(function() {
-    this.say("Ouch, you stepped on me!!!")
-})
-
-cat.whenKeyPressed(' ', function() {
-    console.log('stretching')
-    stretchCostume.addTo(cat);
-    cat.nextCostume();
-})
-
-cat.whenKeyPressed(39, function () {// right arrow
-    this.pointInDirection(-90);
-    this.changeX(100);
-});
-
-cat.whenKeyPressed(37, function () {// left arrow
-    this.pointInDirection(90);
-    this.changeX(-100);
-});
-
-cat.whenKeyPressed(38, function () {// up arrow
-    this.changeY(100);
-});
-
-cat.whenKeyPressed(40, function () {// down arrow
-    this.changeY(-100);
-});
-    let answer;
-    sprite.whenFlag(function() {
-        answer = this.ask('What is your name?');
-        this.say('Hello, ' + answer);
-    });
-
-    sprite.whenClicked( function() {
-        costume.addTo(sprite);
-    });
-
-    sprite.whenKeyPressed(39, function() {
-        this.changeX(100);
-    });
-
-    sprite.whenKeyPressed(37, function() {
-        this.changeX(-100);
-    });
-
-    sprite.whenKeyPressed(38, function() {
-        this.changeY(100);
-    });
-
-    sprite.whenKeyPressed(40, function() {
-        this.changeY(-100);
-    });
+</head> 
+<body> 
+ <script src="https://cdn.jsdelivr.net/npm/blocklike@1.0.0/dist/blocklike-1.0.0.min.js%22%3E"></script>
+ <script>
+    let stage = blocklike.stage();
+    //helpers
+    function abs(num) {
+        if(num<0){
+            return num*-1;
+        }
+        return num;
+    }
 </script>
+<script src="Sprites/zombie.js"></script>
 </body>
 </html>
