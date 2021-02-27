@@ -8,12 +8,6 @@ zombie.addTo(stage);
 zombie.setRotationStyle('left-right');
 zombie.pointInDirection(-90);
 
-zombie.whenKeyPressed(' ', function() {
-    console.log('stretching')
-    stretchCostume.addTo(zombie);
-    zombie.nextCostume();
-})
-
 zombie.whenKeyPressed(39, function () {// right arrow
     this.pointInDirection(-90);
     this.changeX(100);
