@@ -19,12 +19,9 @@ background-size: cover;
     <script>
     let stage = new blockLike.Stage();
     //helpers
-    function abs(num) {
-        if(num<0){
-            return num*-1;
-        }
-        return num;
-    }
+    stage.whenFlag (function(){
+        this.playSound ('sound.mp3')
+    })
 </script>
 <script src="Sprites/zombie.js"></script>
 <script src="Sprites/human.js"></script>

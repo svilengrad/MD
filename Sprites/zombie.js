@@ -25,4 +25,3 @@ zombie.whenKeyPressed(38, function () {// up arrow
 zombie.whenKeyPressed(40, function () {// down arrow
     this.changeY(-100);
 });
-this.Sound('The Maze Runner.mp3')
