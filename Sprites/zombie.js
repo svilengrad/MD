@@ -9,19 +9,27 @@ zombie.setRotationStyle('left-right');
 zombie.pointInDirection(-90);
 
 zombie.whenKeyPressed(39, function () {// right arrow
+    if(this.x < stage.width/2-100){
+        this.changeX(100);
     this.pointInDirection(-90);
-    this.changeX(100);
+    }
 });
 
 zombie.whenKeyPressed(37, function () {// left arrow
+    if(this.x > (stage.width / 2 * -1) +100){
+        this.changeX (-100)
     this.pointInDirection(90);
-    this.changeX(-100);
+    }
 });
 
-zombie.whenKeyPressed(38, function () {// up arrow
-    this.changeY(100);
+zombie.whenKeyPressed(38, function () {// up arrow 
+    if(this.y < stage.height /2-100){
+        this.changeY (100)
+    }
 });
 
 zombie.whenKeyPressed(40, function () {// down arrow
-    this.changeY(-100);
+    if(this.y > (stage.height / 2 * -1) +100){
+        this.changeY (-100)
+    }
 });

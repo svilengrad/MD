@@ -9,19 +9,27 @@ human.setRotationStyle('left-right');
 human.pointInDirection(-90);
 
 human.whenKeyPressed('d', function () {// d
+    if(this.x < stage.width/2-100){
+        this.changeX(100);
     this.pointInDirection(-90);
-    this.changeX(100);
+    }
 });
 
 human.whenKeyPressed('a', function () {// a
+    if(this.x > (stage.width / 2 * -1) +100){
+        this.changeX (-100)
     this.pointInDirection(90);
-    this.changeX(-100);
+    }
 });
 
 human.whenKeyPressed('w', function () {// w
-    this.changeY(100);
+    if(this.y < stage.height /2-100){
+        this.changeY (100)
+    }
 });
 
 human.whenKeyPressed('s', function () {// s
-    this.changeY(-100);
+    if(this.y > (stage.height / 2 * -1) +100){
+        this.changeY (-100)
+    }
 });
