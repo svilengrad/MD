@@ -17,19 +17,19 @@ human.whenKeyPressed('d', function () {// d
 
 human.whenKeyPressed('a', function () {// a
     if(this.x > (stage.width / 2 * -1) +100){
-        this.changeX (-100)
+      this.changeX (-100)
     this.pointInDirection(90);
     }
 });
 
 human.whenKeyPressed('w', function () {// w
     if(this.y < stage.height /2-100){
-        this.changeY (100)
+       this.changeY (100)
     }
 });
 
 human.whenKeyPressed('s', function () {// s
     if(this.y > (stage.height / 2 * -1) +100){
-        this.changeY (-100)
+       this.changeY (-100)
     }
 });
