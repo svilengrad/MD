@@ -2,7 +2,7 @@ let human = new blockLike.Sprite({
     width: 100,
     height: 100,
     color: 'transparent',
-    image: 'https://i.pinimg.com/originals/68/99/40/68994070dccbee2cf367fb495c864230.png'
+    image: 'human (1).png'
 });
 human.addTo(stage);
 human.setRotationStyle('left-right');
@@ -12,6 +12,7 @@ human.whenKeyPressed('d', function () {// d
     if(this.x < stage.width/2-100){
         this.changeX(100);
     this.pointInDirection(-90);
+    this.switchCostumeTo(humanright.png);
     }
 });
 
