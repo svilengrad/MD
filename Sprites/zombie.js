@@ -2,7 +2,7 @@ let zombie = new blockLike.Sprite({
     width: 100,
     height: 100,
     color: 'transparent',
-    image: 'https://i.pinimg.com/originals/42/27/a8/4227a8ac87cd63a6b0e1350cc5e222d0.png'
+    image: 'zombie (2).png'
 });
 zombie.addTo(stage);
 zombie.setRotationStyle('left-right');

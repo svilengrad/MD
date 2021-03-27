@@ -12,7 +12,6 @@ human.whenKeyPressed('d', function () {// d
     if(this.x < stage.width/2-100){
         this.changeX(100);
     this.pointInDirection(-90);
-    this.switchCostumeTo(humanright.png);
     }
 });
 
