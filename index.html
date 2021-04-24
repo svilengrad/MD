@@ -18,24 +18,24 @@ background-size: cover;
     <script src="https://cdn.jsdelivr.net/npm/blocklike@1.0.0/dist/blocklike-1.0.0.min.js"></script>
     <script>
      let gameover = new blockLike.Backdrop({
-        image: "gameover.png"
+        image: "https://ak.picdn.net/shutterstock/videos/1015733875/thumb/10.jpg"
     })
     let stage = new blockLike.Stage();;
-   
     stage.whenFlag (function(){
-        // this.playSound ('sound.mp3')
-    })
+       //this.playSound ('sound.mp3')
+});
     function deleteSprite(sprite){
         sprite.say("");
         stage.removeSprite(sprite);
     }
     function isGameOver(){
         if(zombie.isTouching(human)){
-            zombie.say("I win!");
             stage.addBackdrop(gameover)
             stage.switchBackdropTo(gameover);
             deleteSprite(human);
             deleteSprite(zombie);
+            //this.stopSounds('sound.mp3');
+            //this.playSound ('Game Over.mp3')
         }
     }
 </script>
