@@ -20,9 +20,9 @@ background-size: cover;
      let gameover = new blockLike.Backdrop({
         image: "https://ak.picdn.net/shutterstock/videos/1015733875/thumb/10.jpg"
     })
-    let stage = new blockLike.Stage();;
+    let stage = new blockLike.Stage();
     stage.whenFlag (function(){
-       //this.playSound ('sound.mp3')
+       this.playSound ('sound.mp3');
 });
     function deleteSprite(sprite){
         sprite.say("");
@@ -30,12 +30,12 @@ background-size: cover;
     }
     function isGameOver(){
         if(zombie.isTouching(human)){
-            stage.addBackdrop(gameover)
+            stage.addBackdrop(gameover);
             stage.switchBackdropTo(gameover);
             deleteSprite(human);
             deleteSprite(zombie);
-            //this.stopSounds('sound.mp3');
-            //this.playSound ('Game Over.mp3')
+            stage.stopSounds();
+            stage.playSound ('Game Over.mp3');
         }
     }
 </script>
