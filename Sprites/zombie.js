@@ -1,10 +1,9 @@
 let zombie = new blockLike.Sprite({
-    width: 100,
-    height: 100,
+    width: 130,
+    height: 130,
     color: 'transparent',
     image: 'zombie.png'
 });
-
 zombie.addTo(stage);
 zombie.setX(500)
 zombie.whenKeyPressed(37, function () {// left arrow

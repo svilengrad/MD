@@ -1,6 +1,6 @@
 let human = new blockLike.Sprite({
-    width: 100,
-    height: 100,
+    width: 130,
+    height: 130,
     color: 'transparent',
     image: 'human (1).png'
 });
