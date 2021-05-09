@@ -21,7 +21,7 @@ background-size: cover;
     })
     let stage = new blockLike.Stage();
     stage.whenFlag (function(){
-       this.playSound ('sound.mp3');
+       //this.playSound ('sound.mp3');
 });
     function deleteSprite(sprite){
         sprite.say("");
@@ -34,7 +34,10 @@ background-size: cover;
             deleteSprite(human);
             deleteSprite(zombie);
             stage.stopSounds();
-            stage.playSound ('Game Over.mp3');
+           // stage.playSound ('Game Over.mp3');
+           setTimeout(()=>{
+               location.reload()
+           },5000)
         }
     }
 </script>
