@@ -12,6 +12,13 @@ zombie.whenKeyPressed(37, function () {// left arrow
        this.pointInDirection(-150);
        isGameOver();
     }
+}); 
+zombie.whenKeyPressed(39, function () {// right arrow
+    if(this.x < stage.width/ 2-100){
+        this.pointInDirection(360);
+        this.changeX(100);
+        isGameOver();
+    }
 });
 zombie.whenKeyPressed(38, function () {// up arrow 
     if(this.y < stage.height /2-100){
@@ -20,7 +27,6 @@ zombie.whenKeyPressed(38, function () {// up arrow
        isGameOver();
     }
 });
-
 zombie.whenKeyPressed(40, function () {// down arrow
     if(this.y > (stage.height / 2 * -1) +100){
        this.changeY (-100)

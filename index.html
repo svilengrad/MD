@@ -8,7 +8,7 @@
   href="./images/sas4.jpg">
 <style> 
 body {
-background-image: url('https://lh3.googleusercontent.com/proxy/yM185O67REBH6-L3-YA0FD54up-IoqHRtHc9dEfkkvfzY7uKKioguqLqNG0Qx38I8-B1hxKr-pkAeOhqmP1o_cKbTFKnzOaxZThP6Ys');
+background-image: url('PRESS FLAG.png');
 background-size: cover;
 }
 </style>
@@ -19,9 +19,14 @@ background-size: cover;
      let gameover = new blockLike.Backdrop({
         image: "https://ak.picdn.net/shutterstock/videos/1015733875/thumb/10.jpg"
     })
+    let back = new blockLike.Backdrop({
+        image:'https://t3.ftcdn.net/jpg/04/15/71/56/360_F_415715683_9menjU3ckpXrO3zSRZ3x4XeApLEtF0FE.jpg'
+    })
     let stage = new blockLike.Stage();
     stage.whenFlag (function(){
-       //this.playSound ('sound.mp3');
+        this.playSound ('sound.mp3');
+        stage.addBackdrop(back);
+        stage.switchBackdropTo(back);
 });
     function deleteSprite(sprite){
         sprite.say("");
@@ -34,8 +39,8 @@ background-size: cover;
             deleteSprite(human);
             deleteSprite(zombie);
             stage.stopSounds();
-           // stage.playSound ('Game Over.mp3');
-           setTimeout(()=>{
+            stage.playSound ('Game Over.mp3');
+            setTimeout(()=>{
                location.reload()
            },5000)
         }
