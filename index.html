@@ -18,16 +18,16 @@ background-size: cover;
     <script>
      let gameover = new blockLike.Backdrop({
         image: "https://ak.picdn.net/shutterstock/videos/1015733875/thumb/10.jpg"
-    })
+    });
     let back = new blockLike.Backdrop({
         image:'https://t3.ftcdn.net/jpg/04/15/71/56/360_F_415715683_9menjU3ckpXrO3zSRZ3x4XeApLEtF0FE.jpg'
-    })
+    });
     let stage = new blockLike.Stage();
     stage.whenFlag (function(){
         this.playSound ('sound.mp3');
         stage.addBackdrop(back);
         stage.switchBackdropTo(back);
-});
+    });
     function deleteSprite(sprite){
         sprite.say("");
         stage.removeSprite(sprite);
