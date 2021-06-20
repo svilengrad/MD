@@ -23,28 +23,48 @@ background-size: cover;
         image:'https://t3.ftcdn.net/jpg/04/15/71/56/360_F_415715683_9menjU3ckpXrO3zSRZ3x4XeApLEtF0FE.jpg'
     });
     let stage = new blockLike.Stage();
+    
     stage.whenFlag (function(){
+        stage.broadcastMessage("game-start")
+    });
+    
+    // Game Start
+
+    stage.whenReceiveMessage("game-start", function(){
         //this.playSound ('sound.mp3');
         stage.addBackdrop(back);
         stage.switchBackdropTo(back);
     });
+
+    // Game Over
+
+    function isGameOver(){
+        if(zombie.isTouching(human)){
+            stage.broadcastMessage("game-over")
+        }
+    }
+
+    stage.whenReceiveMessage("game-over", function isGameOver(){
+        stage.addBackdrop(gameover);
+        stage.switchBackdropTo(gameover);
+        
+        human.hide();
+        zombie.hide();
+        
+        stage.stopSounds();
+        stage.playSound ('Game Over.mp3');
+        setTimeout(()=>{
+            stage.broadcastMessage("game-start")
+        },5000)
+    });
+
+    // ...
+
     function deleteSprite(sprite){
         sprite.say("");
         stage.removeSprite(sprite);
     }
-    function isGameOver(){
-        if(zombie.isTouching(human)){
-            stage.addBackdrop(gameover);
-            stage.switchBackdropTo(gameover);
-            deleteSprite(human);
-            deleteSprite(zombie);
-            stage.stopSounds();
-            stage.playSound ('Game Over.mp3');
-            setTimeout(()=>{
-               location.reload()
-           },5000)
-        }
-    }
+    
 </script>
 <script src="Sprites/zombie.js"></script>
 <script src="Sprites/human.js"></script>
