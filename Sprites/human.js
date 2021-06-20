@@ -4,7 +4,22 @@ let human = new blockLike.Sprite({
     color: 'transparent',
     image: 'human (1).png'
 });
+
+// Initialisation
+
 human.addTo(stage);
+human.hide();
+
+
+// Game Start
+
+stage.whenReceiveMessage("game-start", function(){
+    human.setX(-500)
+    human.show();
+});
+
+// Key Controls
+
 human.whenKeyPressed('d', function () {// d
     if(this.x < stage.width/2-100){
         this.changeX(100);
