@@ -1,72 +1,16 @@
 <!DOCTYPE html>
-<html> 
-<head>  
-<title>SAS4
-</title>
-<link rel="icon" 
-  type="image/png" 
-  href="./images/sas4.jpg">
-<style> 
-body {
-background-image: url('PRESS FLAG.png');
-background-size: cover;
-}
-</style>
-</head> 
-<body> 
-    <script src="https://cdn.jsdelivr.net/npm/blocklike@1.0.0/dist/blocklike-1.0.0.min.js"></script>
+<html></html>
+<head>
+    <div id="t">playerSpriteX = 0</div>
+</head>
+<body>
     <script>
-     let gameover = new blockLike.Backdrop({
-        image: "https://ak.picdn.net/shutterstock/videos/1015733875/thumb/10.jpg"
-    });
-    let back = new blockLike.Backdrop({
-        image:'https://t3.ftcdn.net/jpg/04/15/71/56/360_F_415715683_9menjU3ckpXrO3zSRZ3x4XeApLEtF0FE.jpg'
-    });
-    let stage = new blockLike.Stage();
-    
-    stage.whenFlag (function(){
-        stage.broadcastMessage("game-start")
-    });
-    
-    // Game Start
+  let playerSpriteX = 0;
 
-    stage.whenReceiveMessage("game-start", function(){
-        //this.playSound ('sound.mp3');
-        stage.addBackdrop(back);
-        stage.switchBackdropTo(back);
-    });
-
-    // Game Over
-
-    function isGameOver(){
-        if(zombie.isTouching(human)){
-            stage.broadcastMessage("game-over")
-        }
-    }
-
-    stage.whenReceiveMessage("game-over", function isGameOver(){
-        stage.addBackdrop(gameover);
-        stage.switchBackdropTo(gameover);
-        
-        human.hide();
-        zombie.hide();
-        
-        stage.stopSounds();
-        stage.playSound ('Game Over.mp3');
-        setTimeout(()=>{
-            stage.broadcastMessage("game-start")
-        },5000)
-    });
-
-    // ...
-
-    function deleteSprite(sprite){
-        sprite.say("");
-        stage.removeSprite(sprite);
-    }
-    
-</script>
-<script src="Sprites/zombie.js"></script>
-<script src="Sprites/human.js"></script>
+document.addEventListener('keyup', (e) => {
+  if (e.code === "ArrowUp")        playerSpriteX += 10
+  else if (e.code === "ArrowDown") playerSpriteX -= 10
+  document.getElementById('t').innerHTML = 'playerSpriteX = ' + playerSpriteX;
+}); 
+    </script>  
 </body>
-</html>
